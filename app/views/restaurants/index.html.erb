@@ -1,0 +1,13 @@
+<div style="width: 1000px; margin: 40px auto">
+ <h1 style="text-align: center; margin: 50px; color: darkgray"><strong>The Best Rated Restaurants in Middle Earth</strong></h1>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+    <h2><li style="display: block"><%= link_to restaurant.name, restaurant_path(restaurant) %></li></h2>
+  <% end %>
+  </ul>
+
+  <div class="d-flex justify-content-center">
+    <h2 style="font-size: 20px" class="m-4 btn btn-light"><%= link_to 'Add your restaurant to our list', new_restaurant_path %></h2>
+  </div>
+
+</div>

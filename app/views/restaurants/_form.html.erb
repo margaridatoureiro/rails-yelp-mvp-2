@@ -1,0 +1,8 @@
+<%= simple_form_for @restaurant do |f| %>
+<%= f.input :name %>
+<%= f.input :category, :collection => ['chinese', 'japanese', 'italian', 'french', 'belgian'], :prompt => "Select your restaurant's category" %>
+<%= f.input :address %>
+<%= f.input :phone_number %>
+<%= f.submit "Submit you restaurant proposal", class: "btn btn-primary" %>
+<% end %>
+<%= link_to 'Go back', restaurants_path %>

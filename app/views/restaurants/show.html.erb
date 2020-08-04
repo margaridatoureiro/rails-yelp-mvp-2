@@ -1,0 +1,24 @@
+<div style="width: 1000px; margin: 40px auto">
+  <ul>
+    <h1><strong><li style="display: block; margin-bottom: 40px; text-align: center; color: darkgray"><%= @restaurant.name %></li></strong></h1>
+    <h2><li style="display: block">Category: <%= @restaurant.category.capitalize %></li></h2>
+    <h2><li style="display: block">Location: <%= @restaurant.address %></li></h2>
+    <h2><li style="display: block">Contact info: <%= @restaurant.phone_number %></li></h2>
+  </ul>
+
+  <ul>
+    <h2 style="margin: 30px; text-align: center">Reviews</h2>
+    <% @restaurant.reviews.each do |review| %>
+    <div class="d-flex justify-content-center">
+      <h3 class="ml-4"><%= review.content %></h3>
+      <h3 class="ml-4">(<%= review.rating %>  stars)</h3>
+    </div>
+    <% end %>
+  </ul>
+    <div class="links d-flex justify-content-center">
+      <h2 class="m-4"><%= link_to 'Edit restaurant', edit_restaurant_path(@restaurant) %></h2>
+      <h2 class="m-4"><%= link_to 'Destroy restaurant', restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure?" }  %></h2>
+      <h2 class="m-4"><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %></h2>
+      <h2 class="m-4"><%= link_to 'Go back', restaurants_path %></h2>
+      </div>
+</div>
